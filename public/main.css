@@ -1,5 +1,6 @@
 body {
     background-color: floralwhite;
+    padding-left: 50px;
   }
   
   img {
@@ -8,4 +9,6 @@ body {
     margin: auto;
   }
   
-  
+  ul {
+    list-style-type: none;
+  }
