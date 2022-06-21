@@ -21,7 +21,7 @@ function Show ({bread, index}) {
         <input type="submit" value="DELETE" />
     </form>
     <img src={bread.image} alt={bread.name} />
-    <p>Baked by {bread.baker}</p>
+    <p>{bread.getBakedBy()}</p>
     <li><a href="/breads">Go home</a></li>
     </Default>      
     )  
