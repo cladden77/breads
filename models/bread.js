@@ -4,14 +4,14 @@ const mongoose = require('mongoose')
 //Creating shorthand for the Schema constructor
 const { Schema } = mongoose
 
+// schema
 const breadSchema = new Schema({
-  // we will write our schema here
   name: { type: String, required: true },
   hasGluten: Boolean,
-  image: { type: String, default: 'http://place-hold.it/500x500.png' },
+  image: { type: String, default: 'http://placehold.jp/500x500.png' },
   baker: {
-    type: String,
-    enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Ross', 'Phoebe']
+    type: Schema.Types.ObjectID,
+    ref: 'Baker'
   }
 })
 
@@ -19,7 +19,6 @@ const breadSchema = new Schema({
 breadSchema.methods.getBakedBy = function(){
   return `${this.name} was baked with love by ${this.baker}`
 }
-
 
 //Model and export
 // const Bread: The variable we are saving our model to. Conventionally, it should be capitalized and use the singular version of the collection the model is for.
